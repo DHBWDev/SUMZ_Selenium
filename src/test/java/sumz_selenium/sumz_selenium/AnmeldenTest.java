@@ -24,7 +24,8 @@ public class AnmeldenTest extends BaseTest{
 	    Assert.assertTrue(driver.getCurrentUrl().equals("http://sumz1718.dh-karlsruhe.de/"));
   }
   
+  @Test
   public void registrieren() {
-	  
+	 
   }
 }

@@ -15,7 +15,7 @@ import java.util.*;
 
 
 
-public class Anmelden extends BaseTest{
+public class AnmeldenTest extends BaseTest{
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;

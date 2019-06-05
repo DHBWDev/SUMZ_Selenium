@@ -1,9 +1,10 @@
 package sumz_selenium.sumz_selenium;
 
-import org.junit.Test;
-import org.junit.Before;
 import org.junit.After;
-import static org.junit.Assert.*;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.jupiter.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Dimension;
@@ -19,16 +20,19 @@ public class Anmelden extends BaseTest{
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
+ 
   @Before
   public void setUp() {
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
+
   @After
   public void tearDown() {
     driver.quit();
   }
+  
   @Test
   public void anmelden(){
 	    driver.get("http://sumz1718.dh-karlsruhe.de/login");
@@ -41,10 +45,11 @@ public class Anmelden extends BaseTest{
 	    
 	    new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://sumz1718.dh-karlsruhe.de/"));
 	    
-	    assertTrue(driver.getCurrentUrl().equals("http://sumz1718.dh-karlsruhe.de/"));
+	    Assert.assertTrue(driver.getCurrentUrl().equals("http://sumz1718.dh-karlsruhe.de/"));
   }
   
-  @Test
+
+  
   public void registrieren() {
 	  
   }

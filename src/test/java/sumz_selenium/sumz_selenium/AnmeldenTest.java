@@ -1,19 +1,11 @@
 package sumz_selenium.sumz_selenium;
 
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.JavascriptExecutor;
-import java.util.*;
-
-
 
 public class AnmeldenTest extends BaseTest{
   
@@ -24,15 +16,13 @@ public class AnmeldenTest extends BaseTest{
 	    driver.findElement(By.id("email")).click();
 	    driver.findElement(By.id("email")).sendKeys("olistraub@web.de");
 	    driver.findElement(By.id("password")).click();
-	    driver.findElement(By.id("password")).sendKeys("12345678aA#");
+	    driver.findElement(By.id("password")).sendKeys("12345678aA##");
 	    driver.findElement(By.cssSelector(".login-btn")).click();
 	    
 	    new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://sumz1718.dh-karlsruhe.de/"));
 	    
 	    Assert.assertTrue(driver.getCurrentUrl().equals("http://sumz1718.dh-karlsruhe.de/"));
   }
-  
-
   
   public void registrieren() {
 	  

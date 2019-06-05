@@ -16,7 +16,7 @@ public class AnmeldenTest extends BaseTest{
 	    driver.findElement(By.id("email")).click();
 	    driver.findElement(By.id("email")).sendKeys("olistraub@web.de");
 	    driver.findElement(By.id("password")).click();
-	    driver.findElement(By.id("password")).sendKeys("12345678aA##");
+	    driver.findElement(By.id("password")).sendKeys("12345678aA#");
 	    driver.findElement(By.cssSelector(".login-btn")).click();
 	    
 	    new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://sumz1718.dh-karlsruhe.de/"));

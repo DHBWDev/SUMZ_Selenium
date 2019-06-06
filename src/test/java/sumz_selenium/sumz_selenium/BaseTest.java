@@ -33,6 +33,12 @@ public class BaseTest {
 	    driver.quit();
 	  }
 	  
+	  public void anmeldung() {
+		  
+		  anmeldung("olistraub@web.de", "12345678aA#");
+
+	  }
+	  
 	  public void anmeldung(String mail, String passwort) {
 		  
 			driver.get("http://sumz1718.dh-karlsruhe.de/login");

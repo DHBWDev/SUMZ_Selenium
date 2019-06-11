@@ -43,6 +43,21 @@ public class AllgemeinTest extends BaseTest {
 
 		Assert.assertFalse(driver.getCurrentUrl().equals("https://github.com/johanngoltz/sumz-ui/"));
 	}
+	
+	@Test
+	public void abmelden() {
+		
+		anmeldung();
+		abmeldung();
+		
+		try {
+			new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://sumz1718.dh-karlsruhe.de/login"));
+		} catch (Exception e) {
+
+		}
+
+		Assert.assertTrue(driver.getCurrentUrl().equals("http://sumz1718.dh-karlsruhe.de/login"));
+	}
 
 	
 	

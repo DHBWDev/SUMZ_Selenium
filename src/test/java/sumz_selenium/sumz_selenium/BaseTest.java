@@ -57,6 +57,11 @@ public class BaseTest {
 		driver.findElement(By.id("password")).click();
 		driver.findElement(By.id("password")).sendKeys(passwort);
 		driver.findElement(By.cssSelector(".login-btn")).click();
+		try {
+			new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://sumz1718.dh-karlsruhe.de/"));
+		} catch (Exception e) {
+
+		}
 
 	}
 
@@ -95,6 +100,26 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 		driver.findElement(By.id("logout-btn")).click();
+
+	}
+	
+	public void passwort_aenderung(String altes_passwort, String neues_passwort1, String neues_passwort2){
+
+
+		driver.findElement(By.id("user-menu-btn")).click();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		driver.findElement(By.id("change-btn")).click();
+	    //driver.findElement(By.id("passwordold")).click();
+	    driver.findElement(By.id("passwordold")).sendKeys(altes_passwort);
+	    //driver.findElement(By.id("passwordnew")).click();
+	    driver.findElement(By.id("passwordnew")).sendKeys(neues_passwort1);
+	    driver.findElement(By.id("passwordnew2")).sendKeys(neues_passwort2);
+	    driver.findElement(By.id("change-btn")).click();
+
 
 	}
 

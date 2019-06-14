@@ -28,6 +28,7 @@ public class BaseTest {
 	@Before
 	public void setUp() {
 		driver = new ChromeDriver();
+		
 		js = (JavascriptExecutor) driver;
 		vars = new HashMap<String, Object>();
 	}
@@ -50,7 +51,7 @@ public class BaseTest {
 
 	public void anmeldung(String mail, String passwort) {
 
-		driver.get("http://sumz1718.dh-karlsruhe.de/login");
+		driver.get("http://localhost:4200/login");
 		driver.manage().window().setSize(new Dimension(1500, 849));
 		driver.findElement(By.id("email")).click();
 		driver.findElement(By.id("email")).sendKeys(mail);

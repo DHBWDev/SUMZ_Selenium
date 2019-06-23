@@ -122,5 +122,48 @@ public class BaseTest {
 
 
 	}
+	
+	public void szenario_anlegung(String name, String beschr, String eigenkapitalzinsen, String verbzinsen, String koerperschaftssteuersatz,String gewerbesteuersatz, String soli){
+
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+	    driver.findElement(By.id("newSzenario")).click();
+	    
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	    
+	    driver.findElement(By.id("name")).click();
+	    driver.findElement(By.id("name")).sendKeys(name);
+	    driver.findElement(By.id("beschreibung")).click();
+	    driver.findElement(By.id("beschreibung")).sendKeys(beschr);
+	    driver.findElement(By.id("blue")).click();	    
+	    
+	    driver.findElement(By.id("submit1")).click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	    driver.findElement(By.id("eigenkapitalzinsen")).sendKeys(eigenkapitalzinsen);
+	    driver.findElement(By.id("verbzinsen")).sendKeys(verbzinsen);
+	    driver.findElement(By.id("gewerbesteuersatz")).sendKeys(gewerbesteuersatz);
+	    driver.findElement(By.id("koerperschaftssteuersatz")).sendKeys(koerperschaftssteuersatz);
+	    driver.findElement(By.id("soli")).sendKeys(soli);
+	    driver.findElement(By.id("submit2")).click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	    driver.findElement(By.id("submit3")).click();
+
+	}
 
 }

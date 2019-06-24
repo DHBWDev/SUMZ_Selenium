@@ -71,4 +71,55 @@ public class ScenarioTest extends BaseTest {
 		
 	}
 	
+	@Test
+	public void szenario_loeschen_v1() {
+
+		anmeldung();
+		int id = szenario_anlegung();
+		szenario_loeschung_v1(id);
+		
+		String erfolgsmeldung = "erfolgreich gelöscht";
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		Assert.assertTrue(driver.findElement(By.className("snackbar-message")).getText().contains(erfolgsmeldung));
+		
+		
+	}
+	
+	@Test
+	public void szenario_loeschen_v2() {
+
+		anmeldung();
+		int id = szenario_anlegung();
+		szenario_loeschung_v2(id);
+		
+		String erfolgsmeldung = "erfolgreich gelöscht";
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		Assert.assertTrue(driver.findElement(By.className("snackbar-message")).getText().contains(erfolgsmeldung));
+		
+		
+	}
+	
+	@Test
+	public void szenario_bearbeiten_v1() {
+
+		anmeldung();
+		int id = szenario_anlegung();
+		szenario_bearbeiten_v1(id);
+		
+		String erfolgsmeldung = "erfolgreich gelöscht";
+
+		Assert.assertTrue(driver.findElement(By.className("snackbar-message")).getText().contains(erfolgsmeldung));
+		
+		
+	}
+	
+	
 }

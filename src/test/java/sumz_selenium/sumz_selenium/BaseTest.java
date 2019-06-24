@@ -123,7 +123,7 @@ public class BaseTest {
 
 	}
 	
-	public void szenario_anlegung(String name, String beschr, String eigenkapitalzinsen, String verbzinsen, String koerperschaftssteuersatz,String gewerbesteuersatz, String soli){
+	public int szenario_anlegung(String name, String beschr, String eigenkapitalzinsen, String verbzinsen, String koerperschaftssteuersatz,String gewerbesteuersatz, String soli){
 
 		try {
 			Thread.sleep(1000);
@@ -163,7 +163,70 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 	    driver.findElement(By.id("submit3")).click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		String url = driver.getCurrentUrl();
+		String[] werte = url.split("/");
+		
+		return Integer.parseInt(werte[werte.length-1]);
 
+	}
+	
+	public int szenario_anlegung(){
+		
+		return szenario_anlegung("TestSzenario", "Testbeschreibung", "1", "2", "3", "4", "5");
+	}
+	
+	public void szenario_loeschung_v1(int id){
+		driver.get("http://sumz1718.dh-karlsruhe.de/");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		driver.findElement(By.id("" + id)).click();
+		driver.findElement(By.id("Sdelete")).click();
+		driver.findElement(By.id("delete")).click();
+	}
+	
+	public void szenario_bearbeiten_v1(int id){
+		driver.get("http://sumz1718.dh-karlsruhe.de/");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		driver.findElement(By.id("" + id)).click();
+		driver.findElement(By.id("Sedit")).click();
+		driver.findElement(By.id("Ssave")).click();
+	}
+	
+	public void szenario_loeschung_v2(int id){
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		driver.get("http://sumz1718.dh-karlsruhe.de/");
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		driver.findElement(By.id(""+id+"menu")).click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		driver.findElement(By.id("delete")).click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		driver.findElement(By.id("delete")).click();
 	}
 
 }

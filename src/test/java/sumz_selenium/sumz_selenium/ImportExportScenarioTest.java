@@ -71,16 +71,20 @@ public class ImportExportScenarioTest extends BaseTest {
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("select-button")));
 		
 		driver.findElement(By.xpath("//app-import-scenario/div[1]/input")).sendKeys(System.getProperty("user.dir") +"\\importFiles\\validScenario.json");
-	
+		System.out.println("1");
 		WebElement importButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("importScenario")));
 		importButton.click();
-		
+		System.out.println("2");
 		WebElement scenario = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[mat-card-title/text()=' ImportScenarioTest ']")));
 		System.out.println(scenario.getAttribute("id"));
-			
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}	
 		WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-card[@id='"+scenario.getAttribute("id")+"']/mat-card-title/button")));
 		menu.click();
-	
+		System.out.println("3");
 		WebElement delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*/div[contains(@class, 'mat-menu-content')]/button[3]")));
 		delete.click();
 		

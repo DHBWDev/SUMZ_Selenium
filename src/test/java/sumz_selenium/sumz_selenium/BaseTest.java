@@ -194,6 +194,7 @@ public class BaseTest {
 	}
 	
 	public void szenario_bearbeiten_v1(int id){
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		driver.get("http://sumz1718.dh-karlsruhe.de/");
 		try {
 			Thread.sleep(2000);
@@ -201,7 +202,18 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 		driver.findElement(By.id("" + id)).click();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		js.executeScript("window.scrollTo(0, 0)");
 		driver.findElement(By.id("Sedit")).click();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		driver.findElement(By.id("Ssave")).click();
 	}
 	
@@ -227,6 +239,31 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 		driver.findElement(By.id("delete")).click();
+	}
+	
+	public void szenario_bearbeiten_v2(int id){
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		driver.get("http://sumz1718.dh-karlsruhe.de/");
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		driver.findElement(By.id(""+id+"menu")).click();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		js.executeScript("window.scrollTo(0, 0)");
+		driver.findElement(By.id("edit")).click();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		driver.findElement(By.id("Ssave")).click();
 	}
 
 }

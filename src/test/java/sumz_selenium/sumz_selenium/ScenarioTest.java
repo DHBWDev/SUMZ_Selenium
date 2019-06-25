@@ -113,13 +113,34 @@ public class ScenarioTest extends BaseTest {
 		anmeldung();
 		int id = szenario_anlegung();
 		szenario_bearbeiten_v1(id);
-		
-		String erfolgsmeldung = "erfolgreich gelöscht";
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		String erfolgsmeldung = "Szenario wurde gespeichert";
 
-		Assert.assertTrue(driver.findElement(By.className("snackbar-message")).getText().contains(erfolgsmeldung));
+		Assert.assertTrue(driver.findElement(By.className("snackbar-message")).getText().equals(erfolgsmeldung));
 		
 		
 	}
 	
+	@Test
+	public void szenario_bearbeiten_v2() {
+
+		anmeldung();
+		int id = szenario_anlegung();
+		szenario_bearbeiten_v2(id);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		String erfolgsmeldung = "Szenario wurde gespeichert";
+
+		Assert.assertTrue(driver.findElement(By.className("snackbar-message")).getText().equals(erfolgsmeldung));
+		
+		
+	}
 	
 }

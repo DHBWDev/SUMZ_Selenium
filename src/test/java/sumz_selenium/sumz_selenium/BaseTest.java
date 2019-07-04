@@ -143,7 +143,7 @@ public class BaseTest {
 	    driver.findElement(By.id("name")).sendKeys(name);
 	    driver.findElement(By.id("beschreibung")).click();
 	    driver.findElement(By.id("beschreibung")).sendKeys(beschr);
-	    driver.findElement(By.id("blue")).click();	    
+	    driver.findElement(By.id("purple")).click();	    
 	    
 	    driver.findElement(By.id("submit1")).click();
 		try {
@@ -151,6 +151,7 @@ public class BaseTest {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
 	    driver.findElement(By.id("eigenkapitalzinsen")).sendKeys(eigenkapitalzinsen);
 	    driver.findElement(By.id("verbzinsen")).sendKeys(verbzinsen);
 	    driver.findElement(By.id("gewerbesteuersatz")).sendKeys(gewerbesteuersatz);
@@ -191,9 +192,14 @@ public class BaseTest {
 		driver.findElement(By.id("" + id)).click();
 		driver.findElement(By.id("Sdelete")).click();
 		driver.findElement(By.id("delete")).click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 	
-	public void szenario_bearbeiten_v1(int id){
+	public int szenario_bearbeiten_v1(int id){
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		driver.get("http://sumz1718.dh-karlsruhe.de/");
 		try {
@@ -215,6 +221,17 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 		driver.findElement(By.id("Ssave")).click();
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		String url = driver.getCurrentUrl();
+		String[] werte = url.split("/");
+		
+		return Integer.parseInt(werte[werte.length-1]);
 	}
 	
 	public void szenario_loeschung_v2(int id){
@@ -226,6 +243,7 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+	
 		driver.findElement(By.id(""+id+"menu")).click();
 		try {
 			Thread.sleep(2000);
@@ -239,9 +257,15 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 		driver.findElement(By.id("delete")).click();
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 	
-	public void szenario_bearbeiten_v2(int id){
+	public int szenario_bearbeiten_v2(int id){
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		driver.get("http://sumz1718.dh-karlsruhe.de/");
 		try {
@@ -269,6 +293,17 @@ public class BaseTest {
 		}
 		js.executeScript("window.scrollTo(0, 0)");
 		driver.findElement(By.id("Ssave")).click();
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		String url = driver.getCurrentUrl();
+		String[] werte = url.split("/");
+		
+		return Integer.parseInt(werte[werte.length-1]);
 	}
 
 }

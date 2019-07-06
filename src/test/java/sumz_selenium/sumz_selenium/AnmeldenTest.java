@@ -11,7 +11,7 @@ public class AnmeldenTest extends BaseTest {
 	@Test
 	public void anmelden_richtig() {
 
-		anmeldung("olistraub@web.de", "12345678aA#");
+		anmeldung("yuhi@intempmail.com", "12345678aA#");
 
 		try {
 			new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://sumz1718.dh-karlsruhe.de/"));

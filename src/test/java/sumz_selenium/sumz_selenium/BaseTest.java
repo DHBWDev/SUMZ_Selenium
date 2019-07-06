@@ -39,7 +39,7 @@ public class BaseTest {
 
 	public void anmeldung() {
 
-		anmeldung("olistraub@web.de", "12345678aA#");
+		anmeldung("yuhi@intempmail.com", "12345678aA#");
 		try {
 			new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://sumz1718.dh-karlsruhe.de/"));
 		} catch (Exception e) {
@@ -190,6 +190,11 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 		driver.findElement(By.id("" + id)).click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		driver.findElement(By.id("Sdelete")).click();
 		driver.findElement(By.id("delete")).click();
 		try {

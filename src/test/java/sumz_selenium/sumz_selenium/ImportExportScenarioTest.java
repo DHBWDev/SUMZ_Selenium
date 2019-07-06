@@ -20,7 +20,7 @@ public class ImportExportScenarioTest extends BaseTest {
 		anmeldung();
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		
-		WebElement scenario = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-card[@id='455']")));
+		WebElement scenario = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-card[@id='1172']")));
 		scenario.click();
 		
 		WebElement export = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*/button/span[text()=' Szenario exportieren ']")));
@@ -44,7 +44,7 @@ public class ImportExportScenarioTest extends BaseTest {
 		anmeldung();
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		
-		WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-card[@id='455']/mat-card-title/button")));
+		WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-card[@id='1172']/mat-card-title/button")));
 		menu.click();
 	
 		WebElement export = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*/div[contains(@class, 'mat-menu-content')]/button[2]")));

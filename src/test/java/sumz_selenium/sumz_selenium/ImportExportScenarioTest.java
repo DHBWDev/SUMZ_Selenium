@@ -54,6 +54,11 @@ public class ImportExportScenarioTest extends BaseTest {
 		Thread.sleep(2000);
 		
 		String downloadLocation = System.getProperty("user.home")+ "\\Downloads";	
+		System.out.println("!!!!!!!!!!!!!!!!!!!");
+		System.out.println("!!!!!!!!!!!!!!!!!!!");
+		System.out.println("!!!!!!!!!!!!!!!!!!!");
+		System.out.println("DOWNLOAD LOCATION:"+ downloadLocation);
+		
 		File file = new File(downloadLocation + "\\scenario.json");
 		Assert.assertTrue(file.exists());
 		file.delete();

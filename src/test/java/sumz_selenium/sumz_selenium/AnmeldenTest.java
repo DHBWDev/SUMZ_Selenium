@@ -128,7 +128,7 @@ public class AnmeldenTest extends BaseTest {
 	    passwort_vergessen("eui22791@cndps.com");
 
 		try {
-			new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://sumz1718.dh-karlsruhe.de/login"));
+			new WebDriverWait(driver, 300).until(ExpectedConditions.urlToBe("http://sumz1718.dh-karlsruhe.de/login"));
 		} catch (Exception e) {
 
 		}

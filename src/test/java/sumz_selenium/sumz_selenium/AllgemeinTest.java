@@ -16,8 +16,14 @@ public class AllgemeinTest extends BaseTest {
 		driver.get("http://sumz1718.dh-karlsruhe.de/login");
 		driver.manage().window().setSize(new Dimension(1500, 849));
 		driver.findElement(By.cssSelector("#ellipsis-menu-btn .mat-icon")).click();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		driver.findElement(By.id("lizenzen-btn")).click();
 
+		
 		try {
 			new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://sumz1718.dh-karlsruhe.de/credits"));
 		} catch (Exception e) {

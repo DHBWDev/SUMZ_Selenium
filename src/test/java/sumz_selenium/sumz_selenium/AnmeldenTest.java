@@ -60,7 +60,7 @@ public class AnmeldenTest extends BaseTest {
 		registrierung(time + "@hewfuhiweuhf.de", "Qwer1234#", "Qwer1234#");
 		
 		try {
-			new WebDriverWait(driver, 5).until(ExpectedConditions.urlToBe("http://sumz1718.dh-karlsruhe.de/login"));
+			new WebDriverWait(driver, 300).until(ExpectedConditions.urlToBe("http://sumz1718.dh-karlsruhe.de/login"));
 		} catch (Exception e) {
 
 		}

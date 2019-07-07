@@ -152,6 +152,13 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 		
+		
+		try {
+			Thread.sleep(10900);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 	    driver.findElement(By.id("eigenkapitalzinsen")).sendKeys(eigenkapitalzinsen);
 	    driver.findElement(By.id("verbzinsen")).sendKeys(verbzinsen);
 	    driver.findElement(By.id("gewerbesteuersatz")).sendKeys(gewerbesteuersatz);
